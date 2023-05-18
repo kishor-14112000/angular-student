@@ -1,1 +1,100 @@
-/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  background-color: #f7f7fc;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@0;1&family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+@import '~primeicons/primeicons.css';
+@import '~quill/dist/quill.snow.css';
+@import '~primeng/resources/themes/saga-blue/theme.css';
+@import '~primeng/resources/primeng.min.css';
+
+.small-start span.p-rating-icon.pi {
+  font-size: 12px;
+  letter-spacing: 1px !important;
+}
+
+.small-starts span.p-rating-icon.pi {
+  font-size: 14px;
+  letter-spacing: 1px !important;
+}
+
+@media (min-width:641px) {
+
+  /* custom scroll bar */
+  *::-webkit-scrollbar {
+    width: 6px !important;
+    height: 6px !important;
+  }
+
+  *::-webkit-scrollbar-track {
+    background-color: transparent !important;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    border-radius: 10px !important;
+    background-color: #D6D6D6 !important;
+  }
+}
+
+* {
+  scrollbar-width: thin;
+  /* -moz-appearance: initial; */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+input,
+textarea,
+I button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a:focus,
+a:visited,
+a:active {
+  outline: none;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  height: 100%;
+  background: var(--white);
+  line-height: 1.4;
+}
+
+p {
+  margin-block-start: auto;
+  margin-block-end: auto;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+.scrollbar-gutter {
+  scrollbar-gutter: stable;
+}
+
+.trans-scroll::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+.trans-scroll:hover::-webkit-scrollbar-thumb {
+  background-color: transparent !important;
+}
+
+.trans-scroll::-webkit-scrollbar-thumb {
+  background-color: transparent !important;
+}
+
+*:focus {
+  outline: none;
+}

@@ -1,0 +1,203 @@
+body {
+    overflow-x: hidden;
+}
+
+/* .for-all-contnet{
+    overflow-y: hidden;
+} */
+
+.flex-head {
+    display: flex;
+    padding: 0.4rem;
+    justify-content: space-between;
+    z-index: 0;
+    width: 100vw;
+    /* background-color: #fff; */
+    height: 60px;
+    position: fixed;
+}
+
+.neo-logo {
+    width: 90px;
+}
+
+.cursor-class {
+    cursor: pointer;
+}
+
+.logo-class {
+    font-family: "Poppins", sans-serif;
+}
+
+::ng-deep .tooltip-inner {
+    font-size: 0.75rem;
+}
+
+.h1-class {
+    font-family: "Poppins", sans-serif;
+    padding: 1.5rem;
+}
+
+.for-header {
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    display: flex;
+    margin-left: 1rem;
+}
+
+.for-bottoms {
+    margin-bottom: -1.8rem;
+}
+
+.for-below-content {
+    padding: 1rem;
+}
+
+.sidebar {
+    height: 88%;
+    width: 430px;
+    position: fixed;
+    top: 65px;
+    background-color: #fff;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 50px;
+    margin-left: .5rem;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 8px;
+    font-size: 36px;
+    margin-right: -.5rem;
+    border: none;
+    height: 38px;
+    width: 40px;
+    margin-top: rem;
+    display: none;
+    background: #e5e1da;
+}
+
+.openbtn {
+    position: absolute;
+    top: 0;
+    right: 8px;
+    font-size: 36px;
+    margin-right: -.5rem;
+    border: none;
+    height: 38px;
+    width: 40px;
+    margin-top: rem;
+    background: #e5e1da;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+    margin-left: 500px;
+    z-index: 1;
+}
+
+.for-font {
+    font-size: 1rem;
+    margin-top: -8px;
+    left: 14px;
+    position: absolute;
+}
+
+.for-acc {
+    margin-top: -3.3rem;
+}
+
+::ng-deep .accordion-button::after {
+    display: none;
+}
+
+.for-family {
+    font-family: "Poppins", sans-serif;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #eee;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+li:hover {
+    background-color: #ccc;
+}
+
+li.selected {
+    background-color: #6f9;
+    color: #fff;
+}
+
+.card {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+li {
+    list-style-type: none;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+li .card:hover {
+    border: 1px solid blue;
+}
+
+ol {
+    padding: 0;
+}
+
+@media screen and (max-height: 450px) {
+    .sidebar {
+        padding-top: 15px;
+    }
+
+    .sidebar a {
+        font-size: 18px;
+    }
+}

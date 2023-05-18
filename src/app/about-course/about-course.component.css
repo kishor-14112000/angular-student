@@ -1,0 +1,137 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span {
+    font-family: "Poppins", sans-serif;
+}
+
+.top-to-bottom {
+    padding: 2.5rem;
+    margin-top: -43rem;
+}
+
+.card-adjust {
+    font-family: "Poppins", sans-serif;
+    padding: 2rem;
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+    background-color: #05192d;
+    color: #fff;
+}
+
+.need-flex-two{
+    display: flex;
+    justify-content: space-between;
+}
+
+.color-i {
+    color: rgb(219, 18, 18);
+    font-size: 1rem;
+}
+
+.blockquote {
+    font-family: "Poppins", sans-serif;
+    line-height: 3rem;
+}
+
+.for-font-size {
+    font-size: 1.6rem;
+}
+
+.header-font {
+    font-size: 1rem;
+}
+
+.for-start {
+    margin-top: 1.4rem;
+    display: flex;
+}
+
+.for-start-details {
+    margin-top: 1.4rem;
+    display: flex;
+}
+
+.for-padding1 {
+    padding: .45rem;
+}
+
+.for-padding2 {
+    padding: .45rem;
+    margin-left: 2rem;
+}
+
+.for-padding-details {
+    margin-left: 1.5rem;
+}
+
+/* ======= */
+
+.card-below {
+    display: flex;
+    justify-content: space-between;
+}
+
+.below-card {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    width: 75%;
+}
+
+.below-card-next {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    width: 25%;
+}
+
+.indented {
+    text-indent: 5em;
+    text-align: justify;
+    line-height: 1.8rem;
+}
+
+.content-card{
+    margin-top: 1rem;
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+}
+
+.content-cards{
+    margin-top: 1rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+.for-box {
+    margin-bottom: 2.5rem;
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+}
+
+.video-container{
+    background-color: #fff;
+    padding: .3rem;
+    width: 360px;
+    height: 210px;
+    object-fit: cover;
+}
+
+iframe{
+    width: 350px;
+    height: 200px;
+}
+
+.float-right{
+    float: right;
+    padding: .6rem;
+}
+
+.for-progress-width{
+    width: 20%;
+}
+
+.flex-need{
+    display: flex;
+    justify-content: space-between;
+}

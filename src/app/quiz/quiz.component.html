@@ -1,0 +1,382 @@
+<!-- <app-navbar></app-navbar> -->
+
+<body class="fade-in-image">
+    <div class="all-content">
+        <div class="flex-head">
+            <div class="logo-class">
+                <div>
+                    <a href="/home"><img src="assets/images/iamneo-logo.png" class="neo-logo cursor-class"></a>
+                </div>
+                <div>
+                    <div class="cursor-class for-hiding">
+                        <i class="fa-regular fa-file-pdf for-icon-adjust" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop2" pTooltip="Material" tooltipPosition="left"
+                            placeholder="Left">
+                        </i> &nbsp; &nbsp;
+
+                        <i class="fa-regular fa-file-lines for-icon-adjust" pTooltip="Notes" tooltipPosition="top"
+                            placeholder="Top" (click)="sidebarVisible2 = true">
+                        </i> &nbsp; &nbsp;
+
+                        <i class="fa-regular fa-circle-question for-icon-adjust" pTooltip="Feedback"
+                            tooltipPosition="left" placeholder="Left" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal2">
+                        </i> &nbsp; &nbsp;
+                        <i class="fa-solid fa-play" pTooltip="Video" tooltipPosition="left" placeholder="Left"
+                            style="font-size: 1.25rem;">
+                        </i> &nbsp; &nbsp;
+                    </div>
+                </div>
+            </div>
+
+            <div class="for-header">
+                <table class="table table-bordered for-table">
+                    <thead>
+                        <tr style="cursor: pointer;">
+                            <th scope="col" pTooltip="Back" tooltipPosition="left" (click)="goBack()">
+                                <i class="fa-solid fa-arrow-left for-header-font"></i>&nbsp;
+                                <span class="for-header-font"></span>
+                            </th>
+                            <th scope="col" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <i class="fa-solid fa-list for-header-font"></i>&nbsp;
+                                <span class="for-header-font">Content</span>
+                            </th>
+                            <th scope="col" routerLink="/practice">
+                                <i class="fa-solid fa-laptop-code for-header-font"></i>&nbsp;
+                                <span class="for-header-font">Practice</span>
+                            </th>
+                            <th scope="col" pTooltip="Next" tooltipPosition="right" (click)="goForward()">
+                                <i class="fa-solid fa-arrow-right for-header-font"></i>&nbsp;
+                                <span class="for-header-font"></span>
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+
+            <div class="cursor-class widget">
+                <i class="fa-regular fa-file-pdf for-icon-adjust" data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop2" pTooltip="Material" tooltipPosition="left" placeholder="Left">
+                </i> &nbsp; &nbsp;
+
+                <i class="fa-regular fa-file-lines for-icon-adjust" pTooltip="Notes" tooltipPosition="top"
+                    placeholder="Top" (click)="sidebarVisible2 = true">
+                </i> &nbsp; &nbsp;
+
+                <i class="fa-regular fa-circle-question for-icon-adjust" pTooltip="Feedback" tooltipPosition="left"
+                    placeholder="Left" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                </i> &nbsp; &nbsp;
+                <i class="fa-solid fa-play for-icon-adjust" pTooltip="Video" tooltipPosition="left" placeholder="Left">
+                </i> &nbsp; &nbsp;
+            </div>
+        </div>
+        <div class="next-all-radio fade-in-image">
+            <div class="for-below-next" *ngFor="let answer of answer_content; let i=index"
+                [hidden]="i !== currentQuizIndex">
+                <div class="for-bg-color-quiz">
+                    <div>
+                        <h1 class="for-h1-font"><span style="color: #0b2558;">Question&nbsp;{{i+1}}: &nbsp;</span>
+                            <span>{{answer.quiz_question}}</span>
+                        </h1>
+                    </div>
+                    <div>
+                        <p class="for-p-class">
+                            <span>{{answer.quiz_question_exp}}</span>
+                        </p>
+                    </div>
+
+                    <div class="for-answer-class">
+                        <span class="text-class"><i class="fa-regular fa-circle-check"></i>&nbsp;
+                            Answer the question!</span>
+                    </div>
+
+                    <div class="for-answers" *ngIf="answer?.option==='2'">
+                        <p style="margin-bottom: 2rem; font-size: 1.1rem; font-weight: 600;">Multiple selection:</p>
+                        <div *ngIf="left && left.length">
+                            <div style="display: flex; line-height: 3.5rem; justify-content: space-between;"
+                                *ngFor="let checkbox of left[i]; let j=index;">
+                                <div style="display: flex;">
+                                    <p-checkbox [value]="checkbox.value + j" [inputId]="'checkbox-' + j" 
+                                        [(ngModel)]="checkedStatus[j]" [checked]="checkedStatus[j]" 
+                                        (click)="toggleOptionSelection(j)">
+                                    </p-checkbox>
+                                    <div style="margin-left: 2rem;">
+                                        <label for="{{checkbox.label+j}}">{{checkbox}}</label>
+                                    </div>
+                                </div>
+                                <div class="for-numbers">
+                                    <span>Press</span>&nbsp;&nbsp;
+                                    <p-tag value=""
+                                        [style]="{'background':'#0b2558','height':'25px','box-shadow':'rgba(0, 0, 0, 0.16) 0px 1px 4px'}">
+                                        {{ getCharacterFromCode(j) }}
+                                    </p-tag>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 1.5rem;">
+                            <div class="for-flex-class">
+                                <!-- <div>
+                                    <button class="btn btn-sm btn-dark unq-color"
+                                        style="margin-right: 1rem; cursor: pointer;" (click)="showAnswer = true"
+                                        pTooltip="Click any option to check" tooltipPosition="bottom">
+                                        Show Answer
+                                    </button>
+                                </div> -->
+                                <div class="for-rights">
+                                    <button class="btn btn-sm btn-dark unq-color" (click)="previousQuestion()"
+                                        [disabled]="currentQuizIndex === 0">Previous
+                                    </button> &nbsp;&nbsp;&nbsp;
+                                    <button class="btn btn-sm btn-dark unq-color"
+                                        *ngIf="currentQuizIndex < answer_content.length - 1"
+                                        (click)="onNextClicked()">Go to Next
+                                    </button>
+                                    <button class="btn btn-sm btn-dark unq-color"
+                                        *ngIf="currentQuizIndex === answer_content.length - 1"
+                                        (click)="finishQuiz()">Finish Quiz
+                                    </button>
+                                </div>
+                                <div>
+                                    <button class="btn btn-sm btn-dark unq-color" (click)="checkAnswer()"
+                                        [disabled]="!areOptionsSelected.includes(true)">
+                                        Check Answer
+                                    </button>
+                                </div>
+                            </div>
+                            <div>
+                                <div *ngIf="showAnswer">
+                                    <p-tabView [style]="{'background':'#000'}">
+                                        <p-tabPanel [style]="{'background':'#000'}">
+                                            <ng-template pTemplate="header">
+                                                <i class="fa-solid fa-check"></i>
+                                            </ng-template>
+                                            <div class="for-font-family text-success for-font-weight">
+                                                Answer: {{ correctAnswers[answer_content[i].ques_id] }}
+                                            </div><br>
+                                            <div class="for-font-family for-indent">
+                                                <i class="fa-solid fa-right-long"></i>&nbsp;&nbsp;{{answer.quiz_answer_exp}}
+                                            </div>
+                                        </p-tabPanel>
+                                    </p-tabView>
+                                </div>
+
+                                <div *ngIf="showAnswerWrong">
+                                    <p-tabView [style]="{'background':'#000'}">
+                                        <p-tabPanel [style]="{'background':'#000'}">
+                                            <ng-template pTemplate="header" [style]="{'background':'#000'}">
+                                                <i class="fa-solid fa-xmark"></i>
+                                            </ng-template>
+                                            <div class="for-font-family text-success for-font-weight">
+                                                Answer: {{ correctAnswers[answer_content[i].ques_id] }}
+                                            </div><br>
+                                            <div class="for-font-family for-indent">
+                                                <i class="fa-solid fa-right-long"></i>&nbsp;&nbsp;{{answer.quiz_answer_exp}}
+                                            </div>
+                                        </p-tabPanel>
+                                    </p-tabView>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="for-answers" *ngIf="answer?.option==='1'">
+                        <p style="margin-bottom: 2rem; font-size: 1.1rem; font-weight: 600;">
+                            Please select any one option!
+                        </p>
+                        <div *ngIf="left && left.length">
+                            <div style="line-height: 3.5rem; display: flex; justify-content: space-between;"
+                                *ngFor="let radio_option of left[i]; let k = index">
+                                <div class="flex flex-wrap gap-3">
+                                    <div class="d-flex align-items-center">
+                                        <p-radioButton [inputId]="radio_option + k" [name]="radio_option + k + i" [value]="radio_option"
+                                            [(ngModel)]="selectedOption" [checked]="k === selectedOptionIndex" (click)="isOptionSelected = true">
+                                        </p-radioButton>
+                                        <div style="margin-left: 2rem;">
+                                            <label class="ml-2">{{ radio_option }}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="for-numbers">
+                                    <span>Press</span>&nbsp;&nbsp;
+                                    <p-tag value=""
+                                        [style]="{'background':'#0b2558','height':'25px','box-shadow':'rgba(0, 0, 0, 0.16) 0px 1px 4px'}">
+                                        {{k+1}}
+                                    </p-tag>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="margin-top: 1.5rem;">
+
+                            <div>
+                                <div class="for-flex-class">
+                                    <div>
+                                        <div class="d-flex">
+                                            <button class="btn btn-sm btn-dark unq-color" (click)="previousQuestion()" [disabled]="currentQuizIndex === 0">Previous
+                                            </button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <button class="btn btn-sm btn-dark unq-color" *ngIf="currentQuizIndex < answer_content.length - 1"
+                                                (click)="onNextClicked()">Go to Next
+                                            </button>
+                                        </div>
+                                        <!-- <span class="note-style">*Check the answer and go to next</span> -->
+                                        <div><button class="btn btn-sm btn-dark unq-color"
+                                            *ngIf="currentQuizIndex === answer_content.length - 1"
+                                            (click)="finishQuiz()">Finish Quiz
+                                        </button></div>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <button class="btn btn-sm btn-dark unq-color" (click)="checkAnswer()"
+                                                [disabled]="!isOptionSelected">
+                                                Check Answer
+                                            </button>
+                                        </div>
+                                        <span class="note-style">*CTRL+ENTER</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div *ngIf="showAnswerWrong">
+                                    <p-tabView [style]="{'background':'#000'}">
+                                        <p-tabPanel [style]="{'background':'#000'}">
+                                            <ng-template pTemplate="header">
+                                                <i class="fa-solid fa-check text-success font-weight-bold"></i>
+                                            </ng-template>
+                                            <div class="for-font-family text-success for-font-weight">
+                                                Answer: {{ correctAnswers[answer_content[i].ques_id] }}
+                                            </div><br>
+                                            <div class="for-font-family for-indent">
+                                                <i class="fa-solid fa-right-long"></i>&nbsp;&nbsp;{{answer.quiz_answer_exp}}
+                                            </div>
+                                        </p-tabPanel>
+                                    </p-tabView>
+                                </div>
+
+                                <div *ngIf="showAnswer">
+                                    <p-tabView [style]="{'background':'#000'}">
+                                        <p-tabPanel [style]="{'background':'#000'}">
+                                            <ng-template pTemplate="header" [style]="{'background':'#000'}">
+                                                <i class="fa-solid fa-xmark text-danger font-weight-bold"></i>
+                                            </ng-template>
+                                            <div class="for-font-family text-danger for-font-weight">
+                                                Answer: {{ correctAnswers[answer_content[i].ques_id] }}
+                                            </div><br>
+                                            <div class="for-font-family for-indent">
+                                                <i class="fa-solid fa-right-long"></i>&nbsp;&nbsp;{{answer.quiz_answer_exp}}
+                                            </div>
+                                        </p-tabPanel>
+                                    </p-tabView>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-class">
+            <div class="for-progress">
+                <div class="card for-progress-align">
+                    <div class="d-flex for-gap">
+                        <p-progressBar [value]="30" [style]="{'height':'6px','width':'230px','text-align':'center'}">
+                        </p-progressBar>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p-sidebar [style]="{'width':'350px','opacity':'1'}" [(visible)]="sidebarVisible2" position="right">
+        <div style="margin-top: -.1rem;">
+            <div>
+                <h3>Take Notes</h3>
+            </div>
+            <div style="margin-bottom: 1rem; display: flex; justify-content: space-between;">
+                <div style="margin-top: .2rem; cursor: pointer;">
+                    <i class="fa-regular fa-circle-play" pTooltip="play video" tooltipPosition="top" placeholder="Top"
+                        style="font-size: 1.3rem;" (click)="playVideo()"></i> &nbsp; &nbsp;
+                    <i class="fa-regular fa-circle-pause" pTooltip="pause video" tooltipPosition="top" placeholder="Top"
+                        style="font-size: 1.3rem;" (click)="pauseVideo()"></i>
+                </div>
+                <div>
+                    <button class="btn btn-sm btn-dark unq-color" pTooltip="Download as txt" tooltipPosition="left"
+                        placeholder="Left" (click)="exportText()"><i class="fa-solid fa-download"></i>
+                        &nbsp;Export</button>
+                </div>
+            </div>
+
+            <div><quill-editor #editor [style]="{'height':'560px','font-size':'1rem'}"></quill-editor></div>
+        </div>
+    </p-sidebar>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel" style="margin-bottom: -.5rem;">Course Content
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">No.</th>
+                                <th scope="col">Content</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let datass of AllData; let i = index">
+                                <th scope="row">{{i+1}}</th>
+                                <td>{{ datass.c_name }}</td>
+                                <td>{{ datass.c_desc }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal"><i
+                            class="fa-solid fa-arrow-left-long"></i> Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- feedback modal -->
+    <form>
+        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Course Feedback!</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Course Name:</label> &nbsp;
+                            <span><b>Angular</b></span>
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Subject:</label>
+                            <input type="text" class="form-control" id="recipient-name" [(ngModel)]="f_subject"
+                                [ngModelOptions]="{standalone:true}">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">Feedback:</label>
+                            <textarea class="form-control" id="message-text" [(ngModel)]="f_feedback"
+                                [ngModelOptions]="{standalone:true}"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">close</button>
+                        <button type="submit" class="btn btn-sm btn-primary unq-color" (click)="onSubmit()">Submit
+                            Feedback</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</body>

@@ -1,0 +1,65 @@
+<div>
+    <div class="flex-head">
+        <div class="logo-class">
+            <div>
+                <a href="/home"><img src="assets/images/iamneo-logo.png" class="neo-logo cursor-class"></a>
+            </div>
+            <div>
+                <div class="cursor-class for-hiding">
+                    <i class="fa-regular fa-file-pdf for-icon-adjust" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop2" pTooltip="Material" tooltipPosition="left" placeholder="Left">
+                    </i> &nbsp; &nbsp;
+
+                    <i class="fa-regular fa-file-lines for-icon-adjust" pTooltip="Notes" tooltipPosition="top"
+                        placeholder="Top" (click)="sidebarVisible2 = true">
+                    </i> &nbsp; &nbsp;
+
+                    <i class="fa-regular fa-circle-question for-icon-adjust" pTooltip="Feedback" tooltipPosition="left"
+                        placeholder="Left" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                    </i> &nbsp; &nbsp;
+                </div>
+            </div>
+        </div>
+
+        <div class="for-header">
+            <table class="table table-bordered for-table">
+                <thead>
+                    <tr style="cursor: pointer;">
+                        <th scope="col" pTooltip="Back" tooltipPosition="left"><i class="fa-solid fa-arrow-left"
+                                style="font-size: .85rem;"></i>&nbsp;<span style="font-size: .85rem;"></span></th>
+                        <th scope="col" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+                                class="fa-solid fa-list" style="font-size: .85rem;"></i>&nbsp;<span
+                                style="font-size: .85rem;">Content</span></th>
+                        <th scope="col" routerLink="/practice"><i class="fa-solid fa-laptop-code"
+                                style="font-size: .85rem;"></i>&nbsp;<span style="font-size: .85rem;">Practice</span>
+                        </th>
+                        <th scope="col" pTooltip="Next" tooltipPosition="right"><i class="fa-solid fa-arrow-right"
+                                style="font-size: .85rem;"></i>&nbsp;<span style="font-size: .85rem;"></span></th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+
+        <div class="cursor-class widget">
+            <i class="fa-regular fa-file-pdf for-icon-adjust" data-bs-toggle="modal" data-bs-target="#staticBackdrop2"
+                pTooltip="Material" tooltipPosition="left" placeholder="Left">
+            </i> &nbsp; &nbsp;
+
+            <i class="fa-regular fa-file-lines for-icon-adjust" pTooltip="Notes" tooltipPosition="top" placeholder="Top"
+                (click)="sidebarVisible2 = true">
+            </i> &nbsp; &nbsp;
+
+            <i class="fa-regular fa-circle-question for-icon-adjust" pTooltip="Feedback" tooltipPosition="left"
+                placeholder="Left" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+            </i> &nbsp; &nbsp;
+        </div>
+    </div>
+
+    <div class="bg-class">
+        <iframe class="for-iframe" 
+            src="https://stackblitz.com/edit/angular-iamneo-jerfsz?file=src%2Fmain.ts,src%2Findex.html">
+        </iframe>
+    </div>
+
+    <!-- <div id="stackblitz-container"></div> -->
+</div>

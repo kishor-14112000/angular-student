@@ -1,0 +1,376 @@
+<app-navbar></app-navbar>
+
+<body>
+  <div class="div-all">
+    &nbsp;
+    <button type="button" class="btn btn-light for-bg"><i class="fa-solid fa-filter"></i> Filter</button>
+    &nbsp; &nbsp; &nbsp; &nbsp;
+    <div class="dropdown">
+      <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" (click)="just_clicked()"
+        aria-expanded="false">
+        Sort by
+      </button>
+      <div [class]="myClass" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Most popular</a>
+        <a class="dropdown-item" href="#">Newest</a>
+        <a class="dropdown-item" href="#">High Rated</a>
+      </div>
+    </div>
+  </div>
+  <div class="for-full-width">
+    <div class="for-half-width">
+
+      <p-accordion [multiple]="true" [style]="{'width': '85%'}">
+        <p-accordionTab header="Rating" [selected]="true">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1"
+              checked>
+            <label class="form-check-label" for="exampleRadios1">
+              <p-rating [(ngModel)]="val2" [cancel]="false" class="small-starts"></p-rating>
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+            <label class="form-check-label" for="exampleRadios2">
+              <p-rating [(ngModel)]="val3" [cancel]="false" class="small-starts"></p-rating>
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+            <label class="form-check-label" for="exampleRadios3">
+              <p-rating [(ngModel)]="val4" [cancel]="false" class="small-starts"></p-rating>
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option4">
+            <label class="form-check-label" for="exampleRadios3">
+              <p-rating [(ngModel)]="val5" [cancel]="false" class="small-starts"></p-rating>
+            </label>
+          </div>
+        </p-accordionTab>
+        <p-accordionTab header="Level">
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault1" checked>
+            <label class="form-check-label" for="flexSwitchCheckDefault1">All Levels</label>
+          </div>
+
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault2">
+            <label class="form-check-label" for="flexSwitchCheckDefault2">Beginner</label>
+          </div>
+
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault3">
+            <label class="form-check-label" for="flexSwitchCheckDefault3">Intermediate</label>
+          </div>
+
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault4">
+            <label class="form-check-label" for="flexSwitchCheckDefault4">Advanced</label>
+          </div>
+        </p-accordionTab>
+        <p-accordionTab header="Price">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="option1" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+              Paid
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="option2" id="defaultCheck2">
+            <label class="form-check-label" for="defaultCheck2">
+              Free
+            </label>
+          </div>
+        </p-accordionTab>
+      </p-accordion>
+    </div>
+
+    <div class="for-next-width">
+      <div class="product-card" routerLink="/about-course">
+        <div class="main-images">
+          <div id="main-content" class="new_class">
+            <div>
+              <input type="checkbox" id="checkbox" />
+              <label for="checkbox">
+                <svg id="heart-svg" viewBox="467 392 58 57">
+                  <g id="Group" fill="none" fill-rule="evenodd" transform="translate(467 392)">
+                    <path
+                      d="M29.144 20.773c-.063-.13-4.227-8.67-11.44-2.59C7.63 28.795 28.94 43.256 29.143 43.394c.204-.138 21.513-14.6 11.44-25.213-7.214-6.08-11.377 2.46-11.44 2.59z"
+                      id="heart" fill="#AAB8C2" />
+                    <circle id="main-circ" fill="#E2264D" opacity="0" cx="29.5" cy="29.5" r="1.5" />
+
+                    <g id="grp7" opacity="0" transform="translate(7 6)">
+                      <circle id="oval1" fill="#9CD8C3" cx="2" cy="6" r="2" />
+                      <circle id="oval2" fill="#8CE8C3" cx="5" cy="2" r="2" />
+                    </g>
+
+                    <g id="grp6" opacity="0" transform="translate(0 28)">
+                      <circle id="oval1" fill="#CC8EF5" cx="2" cy="7" r="2" />
+                      <circle id="oval2" fill="#91D2FA" cx="3" cy="2" r="2" />
+                    </g>
+
+                    <g id="grp3" opacity="0" transform="translate(52 28)">
+                      <circle id="oval2" fill="#9CD8C3" cx="2" cy="7" r="2" />
+                      <circle id="oval1" fill="#8CE8C3" cx="4" cy="2" r="2" />
+                    </g>
+
+                    <g id="grp2" opacity="0" transform="translate(44 6)">
+                      <circle id="oval2" fill="#CC8EF5" cx="5" cy="6" r="2" />
+                      <circle id="oval1" fill="#CC8EF5" cx="2" cy="2" r="2" />
+                    </g>
+
+                    <g id="grp5" opacity="0" transform="translate(14 50)">
+                      <circle id="oval1" fill="#91D2FA" cx="6" cy="5" r="2" />
+                      <circle id="oval2" fill="#91D2FA" cx="2" cy="2" r="2" />
+                    </g>
+
+                    <g id="grp4" opacity="0" transform="translate(35 50)">
+                      <circle id="oval1" fill="#F48EA7" cx="6" cy="5" r="2" />
+                      <circle id="oval2" fill="#F48EA7" cx="2" cy="2" r="2" />
+                    </g>
+
+                    <g id="grp1" opacity="0" transform="translate(24)">
+                      <circle id="oval1" fill="#9FC7FA" cx="2.5" cy="3" r="2" />
+                      <circle id="oval2" fill="#9FC7FA" cx="7.5" cy="2" r="2" />
+                    </g>
+                  </g>
+                </svg>
+              </label>
+            </div>
+          </div>
+          <img id="blue" class="blue active" src="assets/images/angular_course.png" alt="course">
+        </div>
+        <div class="shoe-details">
+          <span class="shoe_name">Angular Fundamentals</span>
+          <p>These courses cover the basics of Angular, including building blocks such as components, directives,
+            templates, and data binding.</p>
+          <div class="stars">
+            <div>
+              <p-rating [(ngModel)]="val3" [cancel]="false" class="star-adj small-start"></p-rating>
+            </div>
+            <div><i class="fa-solid fa-stopwatch" style="color: #0071C7;"></i> 4 hours</div>
+          </div>
+        </div>
+        <div class="for-cart-btn">
+
+          <div>
+            <button class="btn btn-sm btn-light"><i class="fa-solid fa-indian-rupee-sign"></i> 1999 </button>
+          </div>
+          <div><button class="btn btn-sm btn-primary"><i class="fa-solid fa-cart-plus"></i> Add cart</button>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="product-card" routerLink="/about-course">
+        <div class="main-images">
+          <div id="main-content" class="new_class">
+            <div>
+              <input type="checkbox" id="checkbox" />
+              <label for="checkbox">
+                <svg id="heart-svg" viewBox="467 392 58 57">
+                  <g id="Group" fill="none" fill-rule="evenodd" transform="translate(467 392)">
+                    <path
+                      d="M29.144 20.773c-.063-.13-4.227-8.67-11.44-2.59C7.63 28.795 28.94 43.256 29.143 43.394c.204-.138 21.513-14.6 11.44-25.213-7.214-6.08-11.377 2.46-11.44 2.59z"
+                      id="heart" fill="#AAB8C2" />
+                    <circle id="main-circ" fill="#E2264D" opacity="0" cx="29.5" cy="29.5" r="1.5" />
+
+                    <g id="grp7" opacity="0" transform="translate(7 6)">
+                      <circle id="oval1" fill="#9CD8C3" cx="2" cy="6" r="2" />
+                      <circle id="oval2" fill="#8CE8C3" cx="5" cy="2" r="2" />
+                    </g>
+
+                    <g id="grp6" opacity="0" transform="translate(0 28)">
+                      <circle id="oval1" fill="#CC8EF5" cx="2" cy="7" r="2" />
+                      <circle id="oval2" fill="#91D2FA" cx="3" cy="2" r="2" />
+                    </g>
+
+                    <g id="grp3" opacity="0" transform="translate(52 28)">
+                      <circle id="oval2" fill="#9CD8C3" cx="2" cy="7" r="2" />
+                      <circle id="oval1" fill="#8CE8C3" cx="4" cy="2" r="2" />
+                    </g>
+
+                    <g id="grp2" opacity="0" transform="translate(44 6)">
+                      <circle id="oval2" fill="#CC8EF5" cx="5" cy="6" r="2" />
+                      <circle id="oval1" fill="#CC8EF5" cx="2" cy="2" r="2" />
+                    </g>
+
+                    <g id="grp5" opacity="0" transform="translate(14 50)">
+                      <circle id="oval1" fill="#91D2FA" cx="6" cy="5" r="2" />
+                      <circle id="oval2" fill="#91D2FA" cx="2" cy="2" r="2" />
+                    </g>
+
+                    <g id="grp4" opacity="0" transform="translate(35 50)">
+                      <circle id="oval1" fill="#F48EA7" cx="6" cy="5" r="2" />
+                      <circle id="oval2" fill="#F48EA7" cx="2" cy="2" r="2" />
+                    </g>
+
+                    <g id="grp1" opacity="0" transform="translate(24)">
+                      <circle id="oval1" fill="#9FC7FA" cx="2.5" cy="3" r="2" />
+                      <circle id="oval2" fill="#9FC7FA" cx="7.5" cy="2" r="2" />
+                    </g>
+                  </g>
+                </svg>
+              </label>
+            </div>
+          </div>
+          <img id="blue" class="blue active" src="assets/images/angular_course.png" alt="course">
+        </div>
+        <div class="shoe-details">
+          <span class="shoe_name">Angular Fundamentals</span>
+          <p>These courses cover the basics of Angular, including building blocks such as components, directives,
+            templates, and data binding.</p>
+          <div class="stars">
+            <div><p-rating [(ngModel)]="val2" [cancel]="false" class="star-adj small-start"></p-rating></div>
+            <div><i class="fa-solid fa-stopwatch" style="color: #0071C7;"></i> 4 hours</div>
+          </div>
+        </div>
+        <div class="for-cart-btn">
+          <button type="button" class="btn btn-light btn-sm"> Free</button>
+          <button type="button" class="btn btn-primary btn-sm" routerLink="/start"><i
+              class="fa-solid fa-flag-checkered"></i> Get
+            Started</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="main-images">
+          <div id="main-content" class="new_class">
+            <div>
+              <input type="checkbox" id="checkbox" />
+              <label for="checkbox">
+                <svg id="heart-svg" viewBox="467 392 58 57">
+                  <g id="Group" fill="none" fill-rule="evenodd" transform="translate(467 392)">
+                    <path
+                      d="M29.144 20.773c-.063-.13-4.227-8.67-11.44-2.59C7.63 28.795 28.94 43.256 29.143 43.394c.204-.138 21.513-14.6 11.44-25.213-7.214-6.08-11.377 2.46-11.44 2.59z"
+                      id="heart" fill="#AAB8C2" />
+                    <circle id="main-circ" fill="#E2264D" opacity="0" cx="29.5" cy="29.5" r="1.5" />
+
+                    <g id="grp7" opacity="0" transform="translate(7 6)">
+                      <circle id="oval1" fill="#9CD8C3" cx="2" cy="6" r="2" />
+                      <circle id="oval2" fill="#8CE8C3" cx="5" cy="2" r="2" />
+                    </g>
+
+                    <g id="grp6" opacity="0" transform="translate(0 28)">
+                      <circle id="oval1" fill="#CC8EF5" cx="2" cy="7" r="2" />
+                      <circle id="oval2" fill="#91D2FA" cx="3" cy="2" r="2" />
+                    </g>
+
+                    <g id="grp3" opacity="0" transform="translate(52 28)">
+                      <circle id="oval2" fill="#9CD8C3" cx="2" cy="7" r="2" />
+                      <circle id="oval1" fill="#8CE8C3" cx="4" cy="2" r="2" />
+                    </g>
+
+                    <g id="grp2" opacity="0" transform="translate(44 6)">
+                      <circle id="oval2" fill="#CC8EF5" cx="5" cy="6" r="2" />
+                      <circle id="oval1" fill="#CC8EF5" cx="2" cy="2" r="2" />
+                    </g>
+
+                    <g id="grp5" opacity="0" transform="translate(14 50)">
+                      <circle id="oval1" fill="#91D2FA" cx="6" cy="5" r="2" />
+                      <circle id="oval2" fill="#91D2FA" cx="2" cy="2" r="2" />
+                    </g>
+
+                    <g id="grp4" opacity="0" transform="translate(35 50)">
+                      <circle id="oval1" fill="#F48EA7" cx="6" cy="5" r="2" />
+                      <circle id="oval2" fill="#F48EA7" cx="2" cy="2" r="2" />
+                    </g>
+
+                    <g id="grp1" opacity="0" transform="translate(24)">
+                      <circle id="oval1" fill="#9FC7FA" cx="2.5" cy="3" r="2" />
+                      <circle id="oval2" fill="#9FC7FA" cx="7.5" cy="2" r="2" />
+                    </g>
+                  </g>
+                </svg>
+              </label>
+            </div>
+          </div>
+          <img id="blue" class="blue active" src="assets/images/angular_course.png" alt="course">
+        </div>
+        <div class="shoe-details">
+          <span class="shoe_name">Angular Fundamentals</span>
+          <p>These courses cover the basics of Angular, including building blocks such as components, directives,
+            templates, and data binding.</p>
+          <div class="stars">
+            <div><p-rating [(ngModel)]="val1" [cancel]="false" class="star-adj small-start"></p-rating></div>
+            <div><i class="fa-solid fa-stopwatch" style="color: #0071C7;"></i> 4 hours</div>
+          </div>
+        </div>
+        <div class="for-cart-btn">
+          <button type="button" class="btn btn-primary btn-sm"><i class="fa-solid fa-dollar-sign"></i> Get</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="main-images">
+          <div id="main-content" class="new_class">
+            <div>
+              <input type="checkbox" id="checkbox" />
+              <label for="checkbox">
+                <svg id="heart-svg" viewBox="467 392 58 57">
+                  <g id="Group" fill="none" fill-rule="evenodd" transform="translate(467 392)">
+                    <path
+                      d="M29.144 20.773c-.063-.13-4.227-8.67-11.44-2.59C7.63 28.795 28.94 43.256 29.143 43.394c.204-.138 21.513-14.6 11.44-25.213-7.214-6.08-11.377 2.46-11.44 2.59z"
+                      id="heart" fill="#AAB8C2" />
+                    <circle id="main-circ" fill="#E2264D" opacity="0" cx="29.5" cy="29.5" r="1.5" />
+
+                    <g id="grp7" opacity="0" transform="translate(7 6)">
+                      <circle id="oval1" fill="#9CD8C3" cx="2" cy="6" r="2" />
+                      <circle id="oval2" fill="#8CE8C3" cx="5" cy="2" r="2" />
+                    </g>
+
+                    <g id="grp6" opacity="0" transform="translate(0 28)">
+                      <circle id="oval1" fill="#CC8EF5" cx="2" cy="7" r="2" />
+                      <circle id="oval2" fill="#91D2FA" cx="3" cy="2" r="2" />
+                    </g>
+
+                    <g id="grp3" opacity="0" transform="translate(52 28)">
+                      <circle id="oval2" fill="#9CD8C3" cx="2" cy="7" r="2" />
+                      <circle id="oval1" fill="#8CE8C3" cx="4" cy="2" r="2" />
+                    </g>
+
+                    <g id="grp2" opacity="0" transform="translate(44 6)">
+                      <circle id="oval2" fill="#CC8EF5" cx="5" cy="6" r="2" />
+                      <circle id="oval1" fill="#CC8EF5" cx="2" cy="2" r="2" />
+                    </g>
+
+                    <g id="grp5" opacity="0" transform="translate(14 50)">
+                      <circle id="oval1" fill="#91D2FA" cx="6" cy="5" r="2" />
+                      <circle id="oval2" fill="#91D2FA" cx="2" cy="2" r="2" />
+                    </g>
+
+                    <g id="grp4" opacity="0" transform="translate(35 50)">
+                      <circle id="oval1" fill="#F48EA7" cx="6" cy="5" r="2" />
+                      <circle id="oval2" fill="#F48EA7" cx="2" cy="2" r="2" />
+                    </g>
+
+                    <g id="grp1" opacity="0" transform="translate(24)">
+                      <circle id="oval1" fill="#9FC7FA" cx="2.5" cy="3" r="2" />
+                      <circle id="oval2" fill="#9FC7FA" cx="7.5" cy="2" r="2" />
+                    </g>
+                  </g>
+                </svg>
+              </label>
+            </div>
+          </div>
+          <img id="blue" class="blue active" src="assets/images/angular_course.png" alt="course">
+        </div>
+        <div class="shoe-details">
+          <span class="shoe_name">Angular Fundamentals</span>
+          <p>These courses cover the basics of Angular, including building blocks such as components, directives,
+            templates, and data binding.</p>
+          <div class="stars">
+            <div><p-rating [(ngModel)]="val1" [cancel]="false" class="star-adj small-start"></p-rating></div>
+            <div><i class="fa-solid fa-stopwatch" style="color: #0071C7;"></i> 4 hours</div>
+          </div>
+        </div>
+        <div class="for-cart-btn">
+          <button type="button" class="btn btn-primary btn-sm"><i class="fa-solid fa-dollar-sign"></i> Get</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

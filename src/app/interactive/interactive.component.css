@@ -1,0 +1,252 @@
+.flex-head {
+    display: flex;
+    padding: 0.4rem;
+    justify-content: space-between;
+    z-index: 0;
+    width: 100vw;
+    /* background-color: #fff; */
+    height: 60px;
+    /* position: fixed; */
+    font-family: "Poppins", sans-serif;
+}
+
+.neo-logo {
+    width: 90px;
+}
+
+.cursor-class {
+    cursor: pointer;
+}
+
+.logo-class {
+    font-family: "Poppins", sans-serif;
+}
+
+::ng-deep .tooltip-inner {
+    font-size: 0.75rem;
+}
+
+.h1-class {
+    font-family: "Poppins", sans-serif;
+    padding: 1.5rem;
+}
+
+.for-header {
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    display: flex;
+    margin-left: 1rem;
+}
+
+.for-bottoms {
+    margin-bottom: -1.8rem;
+}
+
+.chat-container {
+    display: flex;
+    align-items: center;
+}
+
+.chat-message {
+    padding: 15px;
+    border-radius: 10px;
+    margin-right: 10px;
+    margin-top: -1rem;
+    margin-bottom: -1rem;
+    font-family: "Poppins", sans-serif;
+}
+
+.for-points {
+    margin-top: -.5rem;
+}
+
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    margin-left: 5.5rem;
+}
+
+.loading-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #555;
+    border-radius: 50%;
+    position: absolute;
+    animation: loading 1s ease-in-out infinite;
+}
+
+.loading-dot:nth-child(1) {
+    left: 0;
+    animation-delay: 0ms;
+}
+
+.loading-dot:nth-child(2) {
+    left: 8px;
+    animation-delay: 150ms;
+}
+
+.loading-dot:nth-child(3) {
+    left: 16px;
+    animation-delay: 300ms;
+}
+
+@keyframes loading {
+    0% {
+        transform: scale(0);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
+
+.all-content {
+    overflow-x: hidden;
+}
+
+.below-content {
+    padding: 1.5rem;
+    margin-top: .5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.left-class{
+    margin-left: 3.5rem;
+}
+
+.right-class{
+    margin-right: 6.5rem;
+}
+
+.for-bg {
+    background: #B4E4FF;
+    padding: 1.5rem;
+    width: 850px;
+    border-radius: .5rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.for-bg1 {
+    background: #B4E4FF;
+    padding: 1rem;
+    width: auto;
+    border-radius: .5rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.btn-click-modal {
+    background: #B4E4FF;
+    padding: 1rem;
+    width: 850px;
+    border-radius: .5rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.fade-in {
+    animation: fadeInLeft 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.fade-in1 {
+    animation: fadeInRight 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {    
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.for-button {
+    margin-top: 2rem;
+    float: right;
+    padding: 1rem;
+}
+
+.btn-class {
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.avatar-class{
+    margin-bottom: 1rem;
+    margin-left: 3.5rem;
+}
+
+.avatar-classs{
+    margin-bottom: 1rem;
+    float: right;
+    margin-top: 1.5rem;
+}
+
+.for-right-side{
+    margin-top: 1.5rem;
+    align-self: end;
+}
+
+/* .typing-message {
+    
+    font-family: "Poppins", sans-serif;
+    border-right: 5px solid transparent;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 4s,
+    cursor .4s step-end infinite alternate;
+}
+
+@keyframes cursor {
+    50% {
+        border-color: transparent;
+    }
+}
+
+@keyframes typing {
+    from {width:0}
+} */

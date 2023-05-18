@@ -1,0 +1,113 @@
+<div class="for-inter">
+    <div class="flex-head">
+        <div class="logo-class" style="margin-top: 0.5rem; margin-left: 1rem;">
+            <a href="/home"><img src="assets/images/iamneo-logo.png" class="neo-logo cursor-class"></a>
+        </div>
+
+        <div class="for-header">
+            <table class="table table-bordered" style="border: 1px; padding: .8rem;">
+                <thead>
+                    <tr style="cursor: pointer;">
+                        <th scope="col"><i class="fa-solid fa-arrow-left" style="font-size: .9rem;"></i>&nbsp;<span
+                                style="font-size: .9rem;"></span></th>
+                        <th scope="col" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+                                class="fa-solid fa-list" style="font-size: .9rem;"></i>&nbsp;<span
+                                style="font-size: .9rem;">Content</span></th>
+                        <th scope="col" routerLink="/practice"><i class="fa-solid fa-laptop-code"
+                                style="font-size: .9rem;"></i>&nbsp;<span style="font-size: .9rem;">Practice</span>
+                        </th>
+                        <th scope="col"><i class="fa-solid fa-arrow-right" style="font-size: .9rem;"></i>&nbsp;<span
+                                style="font-size: .9rem;"></span></th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+
+        <div style="margin-top: 0.6rem; margin-right: 0.5rem;" class="cursor-class">
+            <i class="fa-regular fa-file-pdf" ngbTooltip="Material" style="font-size: 1.1rem;"></i> &nbsp; &nbsp;
+            <!-- <i class="fa-regular fa-file-lines" (click)="sidebarVisible2 = true" ngbTooltip="Notes"
+            style="font-size: 1.1rem;"></i> &nbsp; &nbsp; -->
+            <i class="fa-regular fa-circle-play" ngbTooltip="Video" style="font-size: 1.1rem;"></i> &nbsp; &nbsp;
+            <i class="fa-regular fa-circle-question" ngbTooltip="Course Info" style="font-size: 1.1rem;"></i> &nbsp;
+            &nbsp;
+        </div>
+    </div>
+
+    <div *ngFor="let item of learn_content; let i = index">
+        <div class="below-content fade-in" *ngIf="currentIndex === i">
+            <div class="avatar-class">
+                <p-avatar icon="pi pi-user" styleClass="mr-2" [style]="{'background-color': '#9c27b0', 'color': '#ffffff'}"
+                    shape="circle"></p-avatar>&nbsp; Admin
+            </div>
+            <div class="left-class">
+                <div class="for-bg fade-in">
+                    <div>
+                        <p class="chat-message">
+                            {{ item.content }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="for-right-side fade-in1 right-class">
+                <div class="for-bg1">
+                    <p class="chat-message">Awsome right!!!</p>
+                    <button class="btn btn-sm btn-dark btn-class" (click)="showNextContent()">Next</button>
+                </div>
+            </div>
+        </div>
+      
+        <!-- This div will show the next content above the button -->
+        <div class="below-content fade-in" *ngIf="currentIndex + 1 === i && showNext">
+            <div class="avatar-class">
+                <p-avatar icon="pi pi-user" styleClass="mr-2" [style]="{'background-color': '#9c27b0', 'color': '#ffffff'}"
+                    shape="circle"></p-avatar>&nbsp; Admin
+            </div>
+            <div class="left-class">
+                <div class="for-bg fade-in">
+                    <div>
+                        <p class="chat-message">
+                            {{ learn_content[currentIndex + 1].content }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    <!-- <div class="for-right-side fade-in1 right-class">
+        <div class="for-bg1">
+            <p class="chat-message">Awsome right!!!</p>
+            <button class="btn btn-sm btn-dark btn-class">Click to start</button>
+        </div>
+    </div> -->
+</div>
+<!-- <div class="below-content">
+        <div *ngFor="let learn_data of learn_content">
+            <div class="avatar-class">
+                <p-avatar icon="pi pi-user" styleClass="mr-2"
+                    [style]="{'background-color': '#9c27b0', 'color': '#ffffff'}" shape="circle"></p-avatar>&nbsp; Admin
+            </div>
+            <div class="left-class">
+                <div class="for-bg fade-in">
+                    <div>
+                        <p class="chat-message">{{typingMessage}}</p>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+<!-- <img src="assets/images/man.gif"> -->
+
+<!-- <div class="for-right-side fade-in1 right-class" *ngIf="showButton">
+          <div class="for-bg1">
+            <p class="chat-message">Awsome right!!! Awsome right!!! Awsome right!!!</p>
+            <button class="btn btn-sm btn-dark btn-class" (click)="showNextCard()">Click to start</button>
+          </div>
+        </div> -->
+
+<!-- <div class="btn-click-modal left-class" *ngIf="showNextCards">
+          <div *ngIf="!loading" class="avatar-class">
+            <p-avatar icon="pi pi-user" styleClass="mr-2" [style]="{'background-color': '#9c27b0', 'color': '#ffffff'}"
+              shape="circle"></p-avatar>
+          </div>
+          <p>Hello</p>
+        </div> -->

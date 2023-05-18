@@ -1,0 +1,232 @@
+<body>
+    <div class="for-all-content">
+        <div class="flex-head">
+            <div class="logo-class" style="margin-top: 0.5rem; margin-left: 1rem;">
+                <a href="/home"><img src="assets/images/iamneo-logo.png" class="neo-logo cursor-class"></a>
+            </div>
+
+            <div class="for-header">
+                <table class="table table-bordered" style="border: 1px; padding: .8rem;">
+                    <thead>
+                        <tr style="cursor: pointer;">
+                            <th scope="col"><i class="fa-solid fa-arrow-left" style="font-size: .9rem;"></i>&nbsp;<span
+                                    style="font-size: .9rem;"></span></th>
+                            <th scope="col" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+                                    class="fa-solid fa-list" style="font-size: .9rem;"></i>&nbsp;<span
+                                    style="font-size: .9rem;">Content</span></th>
+                            <th scope="col" routerLink="/practice"><i class="fa-solid fa-laptop-code"
+                                    style="font-size: .9rem;"></i>&nbsp;<span style="font-size: .9rem;">Practice</span>
+                            </th>
+                            <th scope="col"><i class="fa-solid fa-arrow-right" style="font-size: .9rem;"></i>&nbsp;<span
+                                    style="font-size: .9rem;"></span></th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+
+            <div style="margin-top: 0.6rem; margin-right: 0.5rem;" class="cursor-class">
+                <i class="fa-regular fa-file-pdf" ngbTooltip="Material" style="font-size: 1.1rem;"></i> &nbsp; &nbsp;
+                <i class="fa-regular fa-file-lines" ngbTooltip="Notes"
+                    style="font-size: 1.1rem;"></i> &nbsp; &nbsp;
+                <i class="fa-regular fa-circle-play" ngbTooltip="Video" style="font-size: 1.1rem;"></i> &nbsp; &nbsp;
+                <i class="fa-regular fa-circle-question" ngbTooltip="Course Info" style="font-size: 1.1rem;"></i> &nbsp;
+                &nbsp;
+            </div>
+        </div>
+
+
+        <!-- <div class="for-below-content">
+            <div id="mySidebar" class="sidebar">
+                <span class="closebtn" (click)="closeNav()">
+                    <i class="fa-solid fa-angles-left for-font come-out"></i>
+                </span>
+            </div>
+        </div>
+        <div id="main">
+            <button class="openbtn" (click)="openNav()">
+                <i id="expand-icon" class="fa-solid fa-angles-right for-font"></i>
+            </button>
+        </div> -->
+
+        <div class="for-below-content">
+            <div id="mySidebar" class="sidebar" style="border-radius: 6px;">
+
+                <div class="for-acc">
+
+                    <div class="accordion" id="accordionPanelsStayOpenExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" [style.display]="button1Hidden ? 'none' : 'block'">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                    aria-controls="panelsStayOpen-collapseOne"
+                                    style="border: none; background-color: #e5e1da; box-shadow: none; height: 40px; width: 430px;">
+                                    <span style="color: #000; font-family: 'Poppins', sans-serif;"><i
+                                            class="fa-solid fa-book-open-reader"></i>&nbsp;&nbsp;&nbsp;Excercise</span>
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                                <div class="accordion-body" [style.display]="button1Hidden ? 'none' : 'block'"
+                                    style="text-indent: 3em; text-align: justify; font-size: .93rem;">
+                                    JavaScript is a loosely typed language. It can be difficult to understand what types
+                                    of data are being passed around in JavaScript.
+                                    In JavaScript, function parameters and variables don't have any information! So
+                                    developers need to look at documentation, or guess based on the implementation.
+                                    TypeScript allows specifying the types of data being passed around within the code,
+                                    and has the ability to report errors when the types don't match.
+                                    For example, TypeScript will report an error when passing a string into a function
+                                    that expects a number. JavaScript will not.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item" style="box-shadow: none; border: none; background: none;">
+                            <h2 class="accordion-header" [style.display]="button1Hidden ? 'none' : 'block'"
+                                style="box-shadow: none;">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true"
+                                    aria-controls="panelsStayOpen-collapseTwo"
+                                    style="border: none; background-color: #e5e1da; box-shadow: none; height: 40px;">
+                                    <span style="color: #000; font-family: 'Poppins', sans-serif;"><i
+                                            class="fa-solid fa-circle-info"></i>&nbsp;&nbsp;&nbsp;Instruction</span>
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show"
+                                style="background-color: transparent; border: none; font-size: .93rem;">
+                                <div class="accordion-body" [style.display]="button1Hidden ? 'none' : 'block'"
+                                    style="text-indent: 3em; text-align: justify;">
+                                    TypeScript is a syntactic superset of JavaScript which adds static typing.
+                                    This basically means that TypeScript adds syntax on top of JavaScript, allowing
+                                    developers to add types.
+                                </div>
+                            </div>
+                            <div style="text-align: center; margin-top: 2rem;">
+                                <button class="btn btn-outline-success btn-sm"><i class="fa-regular fa-lightbulb"></i>
+                                    Take a hint</button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <button class="closebtn" (click)="toggleButtonVisibility('button1')" (click)="closeNav()"
+                    [hidden]="button1Hidden">
+                    <i id="collapse-icon" class="fa-solid fa-angle-left for-font"></i>
+                </button>
+                <button class="openbtn" (click)="toggleButtonVisibility('button2')" (click)="openNav()"
+                    [hidden]="button2Hidden">
+                    <i id="expand-icon" class="fa-solid fa-angle-right for-font"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="main">
+            <div class="container mt-5">
+                <div class="card">
+                    <div class="d-flex justify-content-between p-3">
+                        <div class="image">
+                            <img src="https://img.icons8.com/color/96/000000/angularjs.png" width="90" alt="logo">
+                        </div>
+                        <div class="quiz-header">
+                            <h4 style="font-family: cursive;">Angular & TypeScript Quiz!</h4>
+                            <span style="font-style: italic;">Welcome {{name}}</span>
+                        </div>
+                    </div>
+
+                    <ng-container *ngIf="!isQuizCompleted">
+                        <div class="d-flex justify-content-around py-3">
+                            <div class="score">
+                                <h5>{{points}} Points</h5>
+                            </div>
+                            <div class="question-remain">
+                                <span style="font-style: italic;">Question {{currentQuestion+1}} of
+                                    {{questionList.length}}</span>
+                            </div>
+                            <div class="timer">
+                                <h5>{{counter}} sec ⏱</h5>
+                            </div>
+                        </div>
+                        <div class="progress mb-3">
+                            <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
+                                [ngStyle]="{'width':progress+'%'}" aria-valuenow="25" aria-valuemin="0"
+                                aria-valuemax="100"></div>
+                        </div>
+                        <div class="question">
+                            <div class="card">
+                                <h3>{{questionList[currentQuestion]?.questionText}}</h3>
+                            </div>
+                        </div>
+                        <div class="options">
+                            <ol *ngFor="let option of questionList[currentQuestion]?.options">
+                                <li (click)="answer(currentQuestion+1,option)">
+                                    <div appChangeBg class="card">
+                                        {{option.text}}
+                                    </div>
+                                </li>
+
+                            </ol>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <button [disabled]="currentQuestion===0" class="btn" (click)="previousQuestion()"><i
+                                    class="fa text-primary fa-chevron-left fa-3x" aria-hidden="true"></i></button>
+                            <button class="btn" (click)="resetQuiz()"><i class="fa fa-refresh text-primary fa-3x"
+                                    aria-hidden="true"></i></button>
+                            <button class="btn" (click)="nextQuestion()"><i
+                                    class="fa text-primary fa-chevron-right fa-3x" aria-hidden="true"></i></button>
+                        </div>
+                    </ng-container>
+
+                    <ng-container *ngIf="isQuizCompleted">
+                        <div class="row d-flex justify-content-between">
+                            <img style="width: 50%;" class="img-fluid col-sm-12 mx-auto"
+                                src="https://icon-library.com/images/celebration-icon-png/celebration-icon-png-7.jpg"
+                                alt="">
+                            <div class="result text-center col-md-6 col-sm-12">
+                                <h3>Congratulations!! <br>You have completed the quiz. <br>Below is your result:</h3>
+                                <p>Total Question Attempted : {{questionList.length}} </p>
+                                <p>Total Correct Answered : {{correctAnswer}} </p>
+                                <p>Total Wrong Answered : {{inCorrectAnswer}} </p>
+                                <p>Your Score : {{points}} Points </p>
+                            </div>
+                        </div>
+                    </ng-container>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- MODAL -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel" style="margin-bottom: -.5rem;">Course Content
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">No.</th>
+                                <th scope="col">Content</th>
+                                <th scope="col">Duration</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let datass of AllData; let i = index">
+                                <th scope="row">{{i+1}}</th>
+                                <td>{{ datass.c_name }}</td>
+                                <td>{{ datass.c_desc }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal"><i
+                            class="fa-solid fa-arrow-left-long"></i> Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

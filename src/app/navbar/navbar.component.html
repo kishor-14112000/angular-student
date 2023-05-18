@@ -1,0 +1,111 @@
+<body>
+	<!-- <p-accordion>
+		<p-accordionTab [selected]="true">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
+		</p-accordionTab>
+	</p-accordion> -->
+	<header class="header_area">
+		<div class="main_menu">
+			<nav class="navbar navbar-expand-lg navbar-light navtag" id="adjust_color">
+				<div class="container adjust_width">
+
+					<div class="logo">
+						<a href="/home"><img src="assets/images/iamneo-logo.png" class="for-mob" alt="k_logo"></a>
+
+						<ul class="snip1226">
+							<li class="current"><a href="#" data-hover="Home" routerLink="/home">Home</a></li>
+							<li><a data-hover="Learn" routerLink="/learn">Learn</a></li>
+							<li><a data-hover="Workspace" routerLink="/workspace">Workspace</a></li>
+							<li><a data-hover="About" routerLink="/home">About</a></li>
+						</ul>
+					</div>
+					<div class="collapse navbar-collapse offset next-half-nav" id="navbarSupportedContent">
+						<ul class="nav navbar-nav menu_nav justify-content-end" id="something">
+
+							<div class="search-adj">
+								<fieldset class="field-container">
+									<input type="text" placeholder="Search..." class="field" />
+									<div class="icons-container">
+										<div class="icon-search"></div>
+										<div class="icon-close">
+											<div class="x-up"></div>
+											<div class="x-down"></div>
+										</div>
+									</div>
+								</fieldset>
+							</div> &nbsp;&nbsp;&nbsp;
+							<li class="nav-item adj-cart">
+								<i class="fa-solid fa-cart-shopping"></i>
+							</li>
+							<li class="nav-item logo-adj">
+								<div>
+									<div class="dropdown drop-adj dropdown-menu-end">
+										<button class="btn btn-light dropdown-toggle no-need-bg" type="button"
+											data-bs-toggle="dropdown" (click)="just_clicked()" aria-expanded="false">
+											<p-avatar icon="pi pi-user" styleClass="mr-2"
+												[style]="{'background-color': '#2196F3', 'color': '#ffffff'}"
+												shape="circle"></p-avatar> &nbsp; Kishorkumar
+										</button>
+										<div [class]="myClass" class="for-drop-pro" aria-labelledby="dropdownMenuButton">
+											<a class="dropdown-item" routerLink="/my-profile"> <i
+													class="fa-solid fa-user" style="color: #4b4b4e;"></i>
+												&nbsp; My
+												profile</a>
+											<a class="dropdown-item" routerLink="/achievment"> <i
+													class="fa-solid fa-award" style="color: #4b4b4e;"></i>
+												&nbsp; Achievment</a>
+
+											<a class="dropdown-item" routerLink="/Bookmarks"> <i
+													class="fa-solid fa-bookmark" style="color: #4b4b4e;"></i>
+												&nbsp; Bookmarks</a>
+											<a class="dropdown-item" routerLink="/login"> <i
+													class="fa-solid fa-right-to-bracket" style="color: #4b4b4e;"></i>
+												&nbsp; Login/Logout</a>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</header>
+
+	<!-- FOR MOBILE -->
+
+	<div class="for-mobile-nav">
+		<nav class="navbar navbar-expand-lg bg-body-tertiary">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">Iamneo</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+					data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" routerLink="/home">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" routerLink="/learn">Learn</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" routerLink="/workspace">Workspace</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" routerLink="/home">About</a>
+						</li>
+					</ul>
+					<form class="d-flex" role="search">
+						<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+						<button class="btn btn-sm btn-primary" type="submit">Search</button>
+					</form>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+
+</body>

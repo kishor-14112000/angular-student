@@ -1,0 +1,93 @@
+<body>
+    <main>
+      <div class="box">
+        <div class="inner-box">
+          <div class="forms-wrap">
+  
+            <form autocomplete="off" class="sign-in-form">
+              <div class="logo">
+                <img src="assets/images/iamneo-logo.png" alt="k_logo">
+              </div>
+              <div class="heading">
+                <h2>Welcome Back</h2>
+                <h6>Not registered yet?</h6>
+                <a href="#" class="toggle"> Sign up </a>
+              </div>
+  
+              <div class="actual-form">
+                <div class="input-wrap">
+                  <input type="text" minlength="4" class="input-field" autocomplete="off" required />
+                  <label>Name</label>
+                </div>
+  
+                <div class="input-wrap">
+                  <input type="{{ showPassword ? 'text' : 'password' }}" id="password1" name="password1"
+                    [(ngModel)]="password" minlength="4" class="input-field" autocomplete="off" required>
+                  <label>Password</label>
+                  <button type="button" id="toggle-password" class="toggle-password" (click)="togglePassword()">
+                    <i [ngClass]="showPassword ? 'fa fa-eye-slash' : 'fa fa-eye'"></i>
+                  </button>
+                </div>
+  
+                <input type="submit" value="Sign In" class="sign-btn" routerLink="/home" />
+                <p class="text">
+                  Forgot Password <a href="#">Get help</a> signing in</p>
+              </div>
+            </form>
+            <!-- SIGNUP START -->
+            <form autocomplete="off" class="sign-up-form">
+              <div class="logo">
+                <img src="assets/images/iamneo-logo.png" alt="k_logo">
+              </div>
+              <div class="heading">
+                <h2>Get Started</h2>
+                <h6>Already have an account?</h6>
+                <a href="#" class="toggle"> Sign in </a>
+              </div>
+  
+              <div class="actual-form">
+                <div class="input-wrap">
+                  <input type="text" minlength="4" class="input-field" autocomplete="off" required />
+                  <label>Username</label>
+                </div>
+  
+                <div class="input-wrap">
+                  <input type="email" class="input-field" autocomplete="off" required />
+                  <label>Email</label>
+                </div>
+  
+                <div class="input-wrap">
+                  <input type="{{ showPassword ? 'text' : 'password' }}" id="password2" name="password2"
+                    [(ngModel)]="password" minlength="4" class="input-field" autocomplete="off" required>
+                  <label>Password</label>
+                  <button type="button" id="toggle-password" class="toggle-password" (click)="togglePassword()">
+                    <i [ngClass]="showPassword ? 'fa fa-eye-slash' : 'fa fa-eye'"></i>
+                  </button>
+                </div>
+  
+                <input type="submit" value="Sign up" routerLink="/home" class="sign-btn" />
+              </div>
+            </form>
+          </div>
+  
+          <div class="carousel">
+            <div class="images-wrapper">
+              <img src="assets/images/new_course.gif" class="image img-1 show" alt="course image">
+            </div>
+  
+            <div class="text-slider">
+  
+  
+              <div class="bullets">
+                <span class="active"></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      
+    </main>
+  </body>
