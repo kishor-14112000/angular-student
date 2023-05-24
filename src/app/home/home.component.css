@@ -152,6 +152,7 @@ button:focus {
   text-transform: uppercase;
   border-radius: 5px;
   background-origin: border-box;
+  width: 20%;
   background-clip: content-box, border-box;
   background-image: linear-gradient(to right, #4458dc 0%, #854fee 100%), radial-gradient(circle at top left, #4458dc, #854fee);
   border: double 2px transparent;
@@ -570,4 +571,8 @@ button:focus {
 
  #something > li a:hover{
     background: none;
+ }
+
+ .for-imgg{
+  z-index: 1;
  }

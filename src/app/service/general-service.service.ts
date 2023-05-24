@@ -17,6 +17,10 @@ export class GeneralServiceService {
     return this.http.get(`/api/courseContent/${mo_no}/${c_id}`);
   }
 
+  get_course_contents(mod_no:any,con_no:any){
+    return this.http.get(`/api/courseContent/${mod_no}/${con_no}`);
+  }
+
   get_course_content_count(m_id:any){
     return this.http.get(`/api/courseContentCount/${m_id}`);
   }

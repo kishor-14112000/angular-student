@@ -22,7 +22,7 @@ export class InteractiveComponent {
   constructor(private service: GeneralServiceService) {}
 
   ngOnInit(): void {
-    // this.getDataLearnAPI();
+    
   }
 
   typeMessage() {

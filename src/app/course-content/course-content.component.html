@@ -27,7 +27,7 @@
       <div class="for-header">
         <table class="table table-bordered for-table">
           <thead>
-            <tr style="cursor: pointer;">
+            <tr class="cursor-class">
               <th scope="col" pTooltip="Back" tooltipPosition="left" (click)="goBack()">
                 <i class="fa-solid fa-arrow-left for-header-font"></i>&nbsp;
                 <span class="for-header-font"></span>
@@ -50,14 +50,18 @@
       </div>
 
       <div class="cursor-class widget">
-        <i class="fa-regular fa-file-pdf for-icon-adjust" data-bs-toggle="modal" data-bs-target="#staticBackdrop2"
-          pTooltip="Material" tooltipPosition="left" placeholder="Left">
-        </i> &nbsp; &nbsp;
-
+        <span>
+          <p-toast [breakpoints]="{'920px': {width: '100%', right: '0', left: '0'}}"
+            [style]="{'width':'300px','font-size':'15px'}"></p-toast>
+          <i class="fa-regular fa-file-pdf for-icon-adjust" (click)="showInfo()" data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop2" pTooltip="Material" tooltipPosition="left" placeholder="Left">
+          </i> &nbsp; &nbsp;
+        </span>
+      
         <i class="fa-regular fa-file-lines for-icon-adjust" pTooltip="Notes" tooltipPosition="top" placeholder="Top"
           (click)="sidebarVisible2 = true">
         </i> &nbsp; &nbsp;
-
+      
         <i class="fa-regular fa-circle-question for-icon-adjust" (click)="downloadZip()" pTooltip="Feedback"
           tooltipPosition="left" placeholder="Left" data-bs-toggle="modal" data-bs-target="#exampleModal2">
         </i> &nbsp; &nbsp;
@@ -83,24 +87,18 @@
           </video>
         </div>
         <div class="d-flex justify-content-between btns">
-          <div style="margin-left: .5rem;"><button type="button" class="btn btn-sm btn-outline-dark"
+          <div class="left-class"><button type="button" class="btn btn-sm btn-outline-dark"
               (click)="showTranscript()"> {{ showTranscriptFlag ? 'Hidescript' : 'Showscript' }}</button>
           </div>
-          <!-- <div class="d-flex" *ngIf="!videoEndedForFirstTime">
-            <p style="color: red; margin-top: .5rem; margin-right: 1rem;">*Complete the video and go to next!</p>
-            <button class="btn btn-sm btn-dark unq-color" [disabled]="!videoEndedForFirstTime" *ngIf="showNextButton"
-              style="cursor: pointer;">Next</button>
-          </div> -->
-          <div style="display: flex;">
-            <p style="color: red; margin-top: .3rem; margin-right: 1rem;">*Understand ?</p>
-            <div style="margin-right: 1rem;">
+          <div class="d-flex">
+            <p class="understand">*Understand ?</p>
+            <div class="margin-right">
               <button class="btn btn-sm btn-primary unq-color" (click)="sendContentId();"
                 (click)="reloadAndFadeIn();">Yes
               </button>
             </div>
             <div>
-              <button class="btn btn-sm btn-dark"><a href="https://angular.io/guide/what-is-angular" target="_blank"
-                  style="text-decoration: none; color: #fff;">No</a>
+              <button class="btn btn-sm btn-dark"><a href="https://angular.io/guide/what-is-angular" target="_blank" class="txt-dec">No</a>
               </button>
             </div>
           </div>
@@ -109,8 +107,8 @@
 
       <div class="showscript" *ngIf="showTranscriptFlag">
         <div>
-          <p style="font-size: 1.2rem; font-weight: 500;">1. What is Angular</p>
-          <p style="margin-bottom: 1rem; text-indent: 3em; text-align: justify;">Lorem ipsum dolor sit amet, consectetur
+          <p class="cap-1">1. What is Angular</p>
+          <p class="cap-2">Lorem ipsum dolor sit amet, consectetur
             adipiscing elit. Donec malesuada urna vitae lorem dapibus, vel
             lacinia
             lacus aliquam. Sed eget leo enim. Sed vitae urna auctor, lacinia arcu nec, lobortis lectus. Sed luctus leo
@@ -118,8 +116,8 @@
             euismod interdum.</p>
         </div>
         <div>
-          <p style="font-size: 1.2rem; font-weight: 500;">2. What is Angular</p>
-          <p style="margin-bottom: 1rem; text-indent: 3em;text-align: justify;">Lorem ipsum dolor sit amet, consectetur
+          <p class="cap-1">1. What is Angular</p>
+          <p class="cap-2">Lorem ipsum dolor sit amet, consectetur
             adipiscing elit. Donec malesuada urna vitae lorem dapibus, vel
             lacinia
             lacus aliquam. Sed eget leo enim. Sed vitae urna auctor, lacinia arcu nec, lobortis lectus. Sed luctus leo
@@ -127,8 +125,8 @@
             euismod interdum.</p>
         </div>
         <div>
-          <p style="font-size: 1.2rem; font-weight: 500;">3. What is Angular</p>
-          <p style="margin-bottom: 1rem; text-indent: 3em;text-align: justify;">Lorem ipsum dolor sit amet, consectetur
+          <p class="cap-1">1. What is Angular</p>
+          <p class="cap-2">Lorem ipsum dolor sit amet, consectetur
             adipiscing elit. Donec malesuada urna vitae lorem dapibus, vel
             lacinia
             lacus aliquam. Sed eget leo enim. Sed vitae urna auctor, lacinia arcu nec, lobortis lectus. Sed luctus leo
@@ -136,8 +134,8 @@
             euismod interdum.</p>
         </div>
         <div>
-          <p style="font-size: 1.2rem; font-weight: 500;">4. What is Angular</p>
-          <p style="margin-bottom: 1rem; text-indent: 3em;text-align: justify;">Lorem ipsum dolor sit amet, consectetur
+          <p class="cap-1">1. What is Angular</p>
+          <p class="cap-2">Lorem ipsum dolor sit amet, consectetur
             adipiscing elit. Donec malesuada urna vitae lorem dapibus, vel
             lacinia
             lacus aliquam. Sed eget leo enim. Sed vitae urna auctor, lacinia arcu nec, lobortis lectus. Sed luctus leo
@@ -146,175 +144,6 @@
         </div>
       </div>
     </div>
-
-    <!-- <div class="next-all-radio fade-in-image" [hidden]="!showNextAllDiv">
-      <div class="for-below-next" *ngFor="let answer of answer_content; let i=index" [hidden]="i !== currentQuizIndex">
-        <div class="for-bg-color-quiz">
-          <div>
-            <h1 class="for-h1-font"><span style="color: #0b2558;">Question&nbsp;{{i+1}}: &nbsp;</span>
-              <span>{{answer.quiz_question}}</span>
-            </h1>
-          </div>
-          <div>
-            <p class="for-p-class">
-              <span>{{answer.quiz_question_exp}}</span>
-            </p>
-          </div>
-
-          <div class="for-answer-class">
-            <span class="text-class"><i class="fa-regular fa-circle-check"></i>&nbsp;
-              Answer the question!</span>
-          </div>
-
-          <div class="for-answers" *ngIf="answer?.option==='2'">
-            <p style="margin-bottom: 2rem; font-size: 1.1rem; font-weight: 600;">Multiple selection:</p>
-            <div *ngIf="ans && ans.length">
-              <div style="display: flex; line-height: 3.5rem; justify-content: space-between;"
-                *ngFor="let checkbox of ans[i]; let j=index;">
-                <div style="display: flex;">
-                  <p-checkbox [value]="checkbox.value+j" [inputId]="checkbox.label + j"
-                    (change)="onCheckBoxChange()"></p-checkbox>
-                  <div style="margin-left: 2rem;">
-                    <label for="{{checkbox.label + j}}">{{checkbox}}</label>
-                  </div>
-                </div>
-                <div>
-                  <span>Press</span>&nbsp;&nbsp;
-                  <p-tag value=""
-                    [style]="{'background':'#0b2558','height':'25px','box-shadow':'rgba(0, 0, 0, 0.16) 0px 1px 4px'}">
-                    {{j+1}}
-                  </p-tag>
-                </div>
-              </div>
-            </div>
-
-            <div style="margin-top: 1.5rem;">
-              <div class="for-flex-class">
-                <div>
-                  <button class="btn btn-sm btn-dark unq-color" style="margin-right: 1rem; cursor: pointer;"
-                    (click)="showAnswer = true" pTooltip="Click any option to check"
-                    tooltipPosition="bottom">
-                    Show Answer
-                  </button>
-                </div>
-                <div>
-                  <button class="btn btn-sm btn-dark unq-color" (click)="previousQuestion()"
-                    [disabled]="currentQuizIndex === 0">Previous</button>
-                  &nbsp;&nbsp;&nbsp;
-                  <button class="btn btn-sm btn-dark unq-color" *ngIf="currentQuizIndex < answer_content.length - 1"
-                    (click)="onNextClicked()">Go to Next
-                  </button>
-                  <button class="btn btn-sm btn-dark unq-color" *ngIf="currentQuizIndex === answer_content.length - 1"
-                    (click)="finishQuiz()">Finish Quiz</button>
-                </div>
-              </div>
-              <div>
-                <div *ngIf="showAnswer">
-                  <p-tabView [style]="{'background':'#000'}">
-                    <p-tabPanel [style]="{'background':'#000'}">
-                      <ng-template pTemplate="header">
-                        <i class="fa-solid fa-check"></i>
-                      </ng-template>
-                      <p>
-                        <span>{{answer.quiz_answer_exp}}</span>
-                      </p>
-                    </p-tabPanel>
-                  </p-tabView>
-                </div>
-
-                <div *ngIf="showAnswerWrong">
-                  <p-tabView [style]="{'background':'#000'}">
-                    <p-tabPanel [style]="{'background':'#000'}">
-                      <ng-template pTemplate="header" [style]="{'background':'#000'}">
-                        <i class="fa-solid fa-xmark"></i>
-                      </ng-template>
-                      <p>
-                        <span>{{answer.quiz_answer_exp}}</span>
-                      </p>
-                    </p-tabPanel>
-                  </p-tabView>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="for-answers" *ngIf="answer?.option==='1'">
-            <p style="margin-bottom: 2rem; font-size: 1.1rem; font-weight: 600;">Please select any one option!</p>
-            <div *ngIf="ans && ans.length">
-              <div style="line-height: 3.5rem; display: flex; justify-content: space-between;"
-                *ngFor="let radio_option of ans[i]; let k = index">
-                <div class="flex flex-wrap gap-3">
-                  <div class="d-flex align-items-center">
-                    <p-radioButton [inputId]="radio_option+k" [name]="radio_option+k+i" [value]="radio_option"
-                      [(ngModel)]="selectedOption"></p-radioButton>
-                    <div style="margin-left: 2rem;"><label class="ml-2">{{ radio_option }}</label></div>
-                  </div>
-                </div>
-                <div>
-                  <span>Press</span>&nbsp;&nbsp;
-                  <p-tag value=""
-                    [style]="{'background':'#0b2558','height':'25px','box-shadow':'rgba(0, 0, 0, 0.16) 0px 1px 4px'}">
-                    {{k+1}}
-                  </p-tag>
-                </div>
-              </div>
-            </div>
-            <div style="margin-top: 1.5rem;">
-
-              <div>
-                <div class="for-flex-class">
-                  <div>
-                    <button class="btn btn-sm btn-dark unq-color" style="margin-right: 1rem; cursor: pointer;"
-                      (click)="showAnswer = true" pTooltip="Click any option to check"
-                      tooltipPosition="bottom">
-                      Show Answer
-                    </button>
-                  </div>
-                  <div>
-                    <button class="btn btn-sm btn-dark unq-color" (click)="previousQuestion()"
-                      [disabled]="currentQuizIndex === 0">Previous</button>
-                    &nbsp;&nbsp;&nbsp;
-                    <button class="btn btn-sm btn-dark unq-color" *ngIf="currentQuizIndex < quiz_content.length - 1"
-                      (click)="onNextClicked()">Go to Next
-                    </button>
-                    <button class="btn btn-sm btn-dark unq-color" *ngIf="currentQuizIndex === quiz_content.length - 1"
-                      (click)="finishQuiz()">Finish Quiz</button>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <div *ngIf="showAnswerWrong">
-                  <p-tabView [style]="{'background':'#000'}">
-                    <p-tabPanel [style]="{'background':'#000'}">
-                      <ng-template pTemplate="header">
-                        <i class="fa-solid fa-check"></i>
-                      </ng-template>
-                      <p>
-                        <span>{{answer.quiz_answer_exp}}</span>
-                      </p>
-                    </p-tabPanel>
-                  </p-tabView>
-                </div>
-
-                <div *ngIf="showAnswer">
-                  <p-tabView [style]="{'background':'#000'}">
-                    <p-tabPanel [style]="{'background':'#000'}">
-                      <ng-template pTemplate="header" [style]="{'background':'#000'}">
-                        <i class="fa-solid fa-xmark"></i>
-                      </ng-template>
-                      <p>
-                        <span>{{answer.quiz_answer_exp}}</span>
-                      </p>
-                    </p-tabPanel>
-                  </p-tabView>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
 
     <div class="footer-class">
       <div class="for-progress">
@@ -329,16 +158,16 @@
   </div>
 
   <p-sidebar [style]="{'width':'350px','opacity':'1'}" [(visible)]="sidebarVisible2" position="right">
-    <div style="margin-top: -.1rem;">
+    <div>
       <div>
         <h3>Take Notes</h3>
       </div>
-      <div style="margin-bottom: 1rem; display: flex; justify-content: space-between;">
-        <div style="margin-top: .2rem; cursor: pointer;">
-          <i class="fa-regular fa-circle-play" pTooltip="play video" tooltipPosition="top" placeholder="Top"
-            style="font-size: 1.3rem;" (click)="playVideo()" [hidden]="showNextAllDiv"></i> &nbsp; &nbsp;
-          <i class="fa-regular fa-circle-pause" pTooltip="pause video" tooltipPosition="top" placeholder="Top"
-            style="font-size: 1.3rem;" (click)="pauseVideo()" [hidden]="showNextAllDiv"></i>
+      <div class="down-notes">
+        <div class="cursor-class mt-2">
+          <i class="fa-regular fa-circle-play font-size" pTooltip="play video" tooltipPosition="top" placeholder="Top"
+            (click)="playVideo()" [hidden]="showNextAllDiv"></i> &nbsp; &nbsp;
+          <i class="fa-regular fa-circle-pause font-size" pTooltip="pause video" tooltipPosition="top" placeholder="Top"
+            (click)="pauseVideo()" [hidden]="showNextAllDiv"></i>
         </div>
         <div>
           <button class="btn btn-sm btn-dark unq-color" pTooltip="Download as txt" tooltipPosition="left"
@@ -354,7 +183,7 @@
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel" style="margin-bottom: -.5rem;">Course Content</h1>
+          <h1 class="modal-title fs-5 mar-bot" id="exampleModalLabel">Course Content</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">

@@ -14,6 +14,7 @@ import { QuizComponent } from './quiz/quiz.component';
 
 const routes: Routes = [
     { path: 'login', component: LoginComponent },
+    { path: '', component: LoginComponent },
 
     { path:'home', component: HomeComponent },
 
@@ -21,7 +22,7 @@ const routes: Routes = [
 
     { path:'start', component: LetsStartComponent },
     
-    { path: 'content/:module_no/:content_id', component: CourseContentComponent },
+    { path: 'content/:module_no/:content_no', component: CourseContentComponent },
 
     { path:'about-course', component: AboutCourseComponent },
 
@@ -33,7 +34,7 @@ const routes: Routes = [
 
     { path:'interactive', component: InteractiveComponent },
 
-    { path:'quiz/:module_no/:content_id', component: QuizComponent },
+    { path:'quiz/:module_no/:content_no', component: QuizComponent },
 ];
 
 @NgModule({

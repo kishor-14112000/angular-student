@@ -42,6 +42,10 @@ span {
     cursor: pointer;
 }
 
+.left-class{
+    margin-left: 8px;
+}
+
 .logo-class {
     font-family: "Poppins", sans-serif;
     margin-top: 0.5rem; 
@@ -75,31 +79,6 @@ span {
     font-family: "Poppins", sans-serif;
     padding: 1.5rem;
 }
-
-/* .drop-class {
-    margin-top: -.3rem;
-    margin-bottom: 1.5rem;
-}
-
-.dropdown-menu {
-    display: none;
-    background: none;
-    font-size: 0.9rem;
-    margin-top: -.9rem;
-}
-
-.dropdown-menu a {
-    color: #fff;
-}
-
-.dropdown-open {
-    display: block;
-}
-
-.dropdown-margin-top {
-    margin-top: 120px;
-}
- */
 
 /* header */
 
@@ -365,6 +344,46 @@ iframe {
     text-align: justify; 
     font-size: 1.1rem; 
     float: left;
+}
+
+.understand{
+    color: red; 
+    margin-top: .3rem; 
+    margin-right: 1rem;
+}
+
+.margin-right{
+    margin-right: 13px;
+}
+
+.txt-dec{
+    text-decoration: none; 
+    color: #fff;
+}
+
+.cap-1{
+    font-size: 1.2rem; 
+    font-weight: 500;
+}
+
+.cap-2{
+    margin-bottom: 1rem; 
+    text-indent: 3em; 
+    text-align: justify;
+}
+
+.down-notes{
+    margin-bottom: 1rem; 
+    display: flex; 
+    justify-content: space-between;
+}
+
+.font-size{
+    font-size: 1.3rem;
+}
+
+.mar-bot{
+    margin-bottom: -.5rem;
 }
 
 @media screen and (max-width: 800px) {

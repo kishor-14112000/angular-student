@@ -135,3 +135,23 @@ iframe{
     display: flex;
     justify-content: space-between;
 }
+
+.size-25{
+    width: 25%;
+}
+
+.size-10{
+    width: 10%;
+}
+
+.size-0{
+    width: 0%;
+}
+
+.width{
+    width: 18rem;
+}
+
+.under-class{
+    text-decoration: underline;
+}

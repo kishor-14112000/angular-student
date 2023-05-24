@@ -7,12 +7,13 @@ import { Router, RouterLink } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Location } from '@angular/common';
-
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-course-content',
   templateUrl: './course-content.component.html',
   styleUrls: ['./course-content.component.css'],
+  providers: [MessageService],
 })
 export class CourseContentComponent implements OnDestroy {
   @ViewChild('dropdownBtn') dropdownBtn!: ElementRef;
@@ -60,7 +61,7 @@ export class CourseContentComponent implements OnDestroy {
   currentArrayIndex: number = 0;
   currentQuestionIndex = 0;
   moduleNo: any;
-  contentId: any;
+  contentNo: any;
   quesId: any;
   content_id: any;
   ques_id: any;
@@ -74,14 +75,15 @@ export class CourseContentComponent implements OnDestroy {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private http: HttpClient,
-    private location: Location
+    private location: Location,
+    private messageService: MessageService
   ) {}
 
   ngOnInit(): void {
     this.showButton = false;
     this.activatedRoute.paramMap.subscribe((params) => {
       this.moduleNo = params.get('module_no');
-      this.contentId = params.get('content_id');
+      this.contentNo = params.get('content_no');
       this.quesId = params.get('ques_id');
       this.getDataFromAPI();
       this.getContentDataAPI();
@@ -116,7 +118,7 @@ export class CourseContentComponent implements OnDestroy {
   goBack(): void {
     this.location.back();
   }
-  
+
   goForward(): void {
     this.location.forward();
   }
@@ -155,7 +157,7 @@ export class CourseContentComponent implements OnDestroy {
   }
 
   getContentDataAPI() {
-    this.service.get_course_content(this.moduleNo, this.contentId).subscribe(
+    this.service.get_course_content(this.moduleNo, this.contentNo).subscribe(
       (response: any) => {
         this.content_data = response.data;
         console.log(this.content_data, 'Content data');
@@ -249,7 +251,7 @@ export class CourseContentComponent implements OnDestroy {
     this.isLoading = true;
     setTimeout(() => {
       this.isLoading = false;
-      this.router.navigate([`/quiz/${this.moduleNo}/${this.content_id}`]);
+      this.router.navigate([`/quiz/${this.moduleNo}/${this.contentNo}`]);
     }, 2000);
   }
 
@@ -261,11 +263,12 @@ export class CourseContentComponent implements OnDestroy {
   }
 
   getQuizData() {
-    this.service.get_quiz_content(this.moduleNo,this.contentId).subscribe(
+    this.service.get_quiz_content(this.moduleNo, this.contentNo).subscribe(
       (response: any) => {
         this.quiz_content = response.data[0];
         this.loaded = true;
         console.log(this.quiz_content, 'Quiz datas');
+        console.log(this.quiz_content.course_id, 'Quiz datas');
       },
       (error) => {
         console.log('Error is:', error);
@@ -294,8 +297,7 @@ export class CourseContentComponent implements OnDestroy {
 
   get_content_count() {
     this.service.get_course_content_count(this.moduleNo).subscribe(
-      (response: any) => {
-      },
+      (response: any) => {},
       (error) => {
         console.log('Error is:', error);
       }
@@ -312,5 +314,13 @@ export class CourseContentComponent implements OnDestroy {
         console.log('Error is:', error);
       }
     );
+  }
+
+  showInfo() {
+    this.messageService.add({
+      severity: 'info',
+      summary: 'Downloading!',
+      detail: 'Complete Course Material',
+    });
   }
 }

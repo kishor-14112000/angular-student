@@ -52,7 +52,7 @@ export class QuizComponent {
   showNextAllDiv: boolean = false;
   selectedCheckboxIndex!: number;
   moduleNo: any;
-  contentId: any;
+  contentNo: any;
   quesId: any;
   i: number = 0;
   opt_ans: any;
@@ -71,6 +71,7 @@ export class QuizComponent {
   selectedOptionIndex!: number;
   checkedStatus: boolean[] = [];
   areOptionsSelected: boolean[] = [];
+  all_course_content: any;
 
   constructor(
     private service: GeneralServiceService,
@@ -84,10 +85,11 @@ export class QuizComponent {
     this.selectedOption = '';
     this.activatedRoute.paramMap.subscribe((params) => {
       this.moduleNo = Number(params.get('module_no'));
-      this.contentId = Number(params.get('content_id'));
+      this.contentNo = Number(params.get('content_no'));
       this.getQuizData();
       this.getAnswerData();
       this.get_content_count();
+      this.getFullContentData();
     });
     this.checkedStatus = Array(this.left.length).fill(false);
   }
@@ -95,8 +97,8 @@ export class QuizComponent {
   @HostListener('window:keydown', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) {
     const keyCode = event.keyCode;
-    const optionCount = this.left[this.i].length;
-    const checkboxCount = this.left[this.i].length;
+    const optionCount = this.left.length;
+    const checkboxCount = this.left.length;
     const isCtrlPressed = event.ctrlKey || event.metaKey; // Check if Ctrl key is pressed
     const isEnterPressed = event.key === 'Enter'; // Check if Enter key is pressed
 
@@ -110,13 +112,6 @@ export class QuizComponent {
       this.checkAnswer(); // Call the checkAnswer() method when Ctrl+Enter is pressed
     }
   }
-
-
-  // if (keyCode >= 65 && keyCode <= 65 + checkboxCount - 1) {
-  //   const pressedIndex = keyCode - 65; // Calculate the index based on the pressed key
-  //   const checkbox = this.left[this.i][pressedIndex];
-  //   checkbox.checked = !checkbox.checked;
-  // }
 
   getCharacterFromCode(code: number): string {
     return String.fromCharCode(65 + code);
@@ -178,66 +173,26 @@ export class QuizComponent {
     this.showAnswerWrong = false;
   }
 
-  // finishQuiz() {
-  //   if (this.contentId <= 1) {
-  //     this.contentId = Number(this.contentId) + 1;
-  //     this.getQuizData();
-  //     this.router.navigate([`/content/${this.contentId}/${this.contentId}`]);
-  //   } else {
-  //     this.router.navigate([`/home`]);
-  //   }
-
-  //   if(this.contentId<=1){
-  //     this.contentId=Number(this.contentId)+1;
-  //     this.getQuizData();
-  //     this.router.navigate([`/content/${this.moduleNo}/${this.contentId}`]);
-  //   }
-  // }
-
-  // finishQuiz() {
-  //   const totalContentInModule = this.module_content_count;
-  //   if (this.contentId < totalContentInModule) {
-  //     this.contentId = Number(this.contentId) + 1;
-  //     this.router.navigate([`/content/${this.moduleNo}/${this.contentId}`]);
-  //   } else {
-  //     this.moduleNo = Number(this.moduleNo) + 1;
-  //     this.contentId = 1;
-  //     this.getQuizData();
-  //     this.router.navigate([`/content/${this.moduleNo}/${this.contentId}`]);
-  //   }
-  // }
-
-  // finishQuiz() {
-  //   const totalContentInModule = this.module_content_count;
-  //   if (this.contentId < totalContentInModule) {
-  //     this.contentId = Number(this.contentId) + 1;
-  //   } else {
-  //     if (this.moduleNo < totalModuleCount) {
-  //       this.moduleNo = Number(this.moduleNo) + 1;
-  //       this.contentId = Number(this.moduleNo) + 1; // Set contentId to the next module's first content ID
-  //       this.getQuizData();
-  //     }
-  //   }
-    
-  //   this.router.navigate([`/content/${this.moduleNo}/${this.contentId}`]);
-  // }
-
   finishQuiz() {
-    const totalContentInModule = this.module_content_count;
-    const totalModuleCount = this.module_count; // Replace with the actual total number of modules 
-    this.router.navigate([`/content/${this.moduleNo}/${this.answer_content[this.service.ind].content_id}`]);
-    if(this.service.ind == totalContentInModule){
-      this.service.ind =0;
-    } else {
-      this.service.ind++;
-    }
-    console.log(this.service.ind,"this.service.ind =0;");
+    const nextContentNo = this.contentNo + 1;
+    // Check if nextContentNo exceeds the total content count
+    const nextModuleNo = nextContentNo > this.module_content_count ? this.moduleNo + 1 : this.moduleNo;
+    const nextContentIndex = nextContentNo > this.module_content_count ? 1 : nextContentNo;
     
+    this.router.navigate([`/content/${nextModuleNo}/${nextContentIndex}`]);
   }
-
-  // finishQuiz(){
-
-  // }
+  
+  getFullContentData() {
+    this.service.get_course_contents(this.moduleNo,this.contentNo).subscribe(
+      (response: any) => {
+        this.all_course_content = response.data;
+        console.log(this.all_course_content, 'all content datas');
+      },
+      (error) => {
+        console.log('Error is:', error);
+      }
+    );
+  }
 
   playVideo() {
     this.videoElement.nativeElement.play();
@@ -266,7 +221,7 @@ export class QuizComponent {
   }
 
   getQuizData() {
-    this.service.get_quiz_content(this.moduleNo,this.contentId).subscribe(
+    this.service.get_quiz_content(this.moduleNo,this.contentNo).subscribe(
       (response: any) => {
         this.quiz_content = response.data;
         console.log(this.quiz_content, 'Quiz datas');
@@ -281,7 +236,8 @@ export class QuizComponent {
     this.service.get_course_content_count(this.moduleNo).subscribe(
       (response: any) => {
         this.module_content_count = response.data[0].content_count;
-        this.module_count = response.data[1].module_count;
+        // this.module_count = response.data[1].module_count;
+        console.log(response.data,"response.data ........ ");
       },
       (error) => {
         console.log('Error is:', error);
@@ -336,7 +292,6 @@ export class QuizComponent {
   checkAnswer() {
     const selectedOptions =
       this.correctAnswers[this.answer_content[this.currentQuizIndex].ques_id];
-
     if (selectedOptions.includes(this.selectedOption)) {
       this.showAnswer = false;
       this.showAnswerWrong = true;
@@ -345,5 +300,4 @@ export class QuizComponent {
       this.showAnswerWrong = false;
     }
   }
-  
 }

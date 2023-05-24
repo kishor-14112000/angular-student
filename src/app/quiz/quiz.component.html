@@ -96,8 +96,8 @@
                             <div style="display: flex; line-height: 3.5rem; justify-content: space-between;"
                                 *ngFor="let checkbox of left[i]; let j=index;">
                                 <div style="display: flex;">
-                                    <p-checkbox [value]="checkbox.value + j" [inputId]="'checkbox-' + j" 
-                                        [(ngModel)]="checkedStatus[j]" [checked]="checkedStatus[j]" 
+                                    <p-checkbox [value]="checkbox.value + j" [inputId]="'checkbox-' + j"
+                                        [(ngModel)]="checkedStatus[j]" [checked]="checkedStatus[j]"
                                         (click)="toggleOptionSelection(j)">
                                     </p-checkbox>
                                     <div style="margin-left: 2rem;">
@@ -154,7 +154,8 @@
                                                 Answer: {{ correctAnswers[answer_content[i].ques_id] }}
                                             </div><br>
                                             <div class="for-font-family for-indent">
-                                                <i class="fa-solid fa-right-long"></i>&nbsp;&nbsp;{{answer.quiz_answer_exp}}
+                                                <i
+                                                    class="fa-solid fa-right-long"></i>&nbsp;&nbsp;{{answer.quiz_answer_exp}}
                                             </div>
                                         </p-tabPanel>
                                     </p-tabView>
@@ -170,7 +171,8 @@
                                                 Answer: {{ correctAnswers[answer_content[i].ques_id] }}
                                             </div><br>
                                             <div class="for-font-family for-indent">
-                                                <i class="fa-solid fa-right-long"></i>&nbsp;&nbsp;{{answer.quiz_answer_exp}}
+                                                <i
+                                                    class="fa-solid fa-right-long"></i>&nbsp;&nbsp;{{answer.quiz_answer_exp}}
                                             </div>
                                         </p-tabPanel>
                                     </p-tabView>
@@ -188,8 +190,9 @@
                                 *ngFor="let radio_option of left[i]; let k = index">
                                 <div class="flex flex-wrap gap-3">
                                     <div class="d-flex align-items-center">
-                                        <p-radioButton [inputId]="radio_option + k" [name]="radio_option + k + i" [value]="radio_option"
-                                            [(ngModel)]="selectedOption" [checked]="k === selectedOptionIndex" (click)="isOptionSelected = true">
+                                        <p-radioButton [inputId]="radio_option + k" [name]="radio_option + k + i"
+                                            [value]="radio_option" [(ngModel)]="selectedOption"
+                                            [checked]="k === selectedOptionIndex" (click)="isOptionSelected = true">
                                         </p-radioButton>
                                         <div style="margin-left: 2rem;">
                                             <label class="ml-2">{{ radio_option }}</label>
@@ -210,18 +213,19 @@
                             <div>
                                 <div class="for-flex-class">
                                     <div>
-                                        <div class="d-flex">
-                                            <button class="btn btn-sm btn-dark unq-color" (click)="previousQuestion()" [disabled]="currentQuizIndex === 0">Previous
-                                            </button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <button class="btn btn-sm btn-dark unq-color" *ngIf="currentQuizIndex < answer_content.length - 1"
-                                                (click)="onNextClicked()">Go to Next
-                                            </button>
-                                        </div>
+
+                                        <button class="btn btn-sm btn-dark unq-color" (click)="previousQuestion()"
+                                            [disabled]="currentQuizIndex === 0">Previous
+                                        </button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <button class="btn btn-sm btn-dark unq-color"
+                                            *ngIf="currentQuizIndex < answer_content.length - 1"
+                                            (click)="onNextClicked()">Go to Next
+                                        </button>
                                         <!-- <span class="note-style">*Check the answer and go to next</span> -->
-                                        <div><button class="btn btn-sm btn-dark unq-color"
+                                        <button class="btn btn-sm btn-dark unq-color"
                                             *ngIf="currentQuizIndex === answer_content.length - 1"
                                             (click)="finishQuiz()">Finish Quiz
-                                        </button></div>
+                                        </button>
                                     </div>
                                     <div>
                                         <div>
@@ -246,7 +250,8 @@
                                                 Answer: {{ correctAnswers[answer_content[i].ques_id] }}
                                             </div><br>
                                             <div class="for-font-family for-indent">
-                                                <i class="fa-solid fa-right-long"></i>&nbsp;&nbsp;{{answer.quiz_answer_exp}}
+                                                <i
+                                                    class="fa-solid fa-right-long"></i>&nbsp;&nbsp;{{answer.quiz_answer_exp}}
                                             </div>
                                         </p-tabPanel>
                                     </p-tabView>
@@ -262,7 +267,8 @@
                                                 Answer: {{ correctAnswers[answer_content[i].ques_id] }}
                                             </div><br>
                                             <div class="for-font-family for-indent">
-                                                <i class="fa-solid fa-right-long"></i>&nbsp;&nbsp;{{answer.quiz_answer_exp}}
+                                                <i
+                                                    class="fa-solid fa-right-long"></i>&nbsp;&nbsp;{{answer.quiz_answer_exp}}
                                             </div>
                                         </p-tabPanel>
                                     </p-tabView>

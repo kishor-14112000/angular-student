@@ -14,17 +14,4 @@ export class AboutCourseComponent {
   constructor(
     private service: GeneralServiceService,
   ) {}
-
-  // getQuizData() {
-  //   this.service.get_quiz_content().subscribe(
-  //     (response: any) => {
-  //       this.quiz_content = response.data;
-  //       localStorage.setItem('quiz_content', JSON.stringify(this.quiz_content));
-  //       console.log(this.quiz_content, 'Quiz datas');
-  //     },
-  //     (error) => {
-  //       console.log('Error is:', error);
-  //     }
-  //   );
-  // }
 }
